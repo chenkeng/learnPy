@@ -14,7 +14,7 @@ days="Mon Tue Wed Thu Fri Sat Sun"
 day="superhan"
 months="Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
 
-print "Here are the days: %s" %days
+print "Here are the days: %s" %day
 print "Here are the months: ",months
 
 print """
