@@ -1,52 +1,37 @@
 #!/usr/bin/env python3
 
 import sys
-if len(sys.argv)!=2:
-    print('Parameter Error')
-    exit()
+print(sys.argv)
+
+if(len(sys.argv)!=2):
+    print("Parameter Error")
 try:
     int(sys.argv[1])
 except:
-    print('Parameter Error')
-    exit()
+    print("Parameter Error")
+
+salery=int(sys.argv[1])
+
+income=salery-3500
 
 
-salery=int(sys.argv[1])-3500
-if salery>=0:
-    salery=salery
-else:
-    salery=0
+def result(ratio,base):
+    tax=(salery-3500)*ratio-base
+    tax="{:.2f}".format(tax)
+    print(tax)
 
-
-if salery<=1500:
-    ratio=0.03
-    initValue=0
-    print("the tax is:",format((salery*ratio-initValue),".2f"))
-elif salery>1500 & salery<=4500:
-    ratio=0.1
-    initValue=105
-    print("the tax is:",format((salery*ratio-initValue),".2f"))
-elif salery>4500 & salery<=9000:
-    ratio=0.2
-    initValue=555
-    print("the tax is:",format((salery*ratio-initValue),".2f"))
-elif salery>9000 & salery<=35000:
-    ratio=0.25
-    initValue=1005
-    print("the tax is:",format((salery*ratio-initValue),".2f"))
-elif salery>35000 & salery<=55000:
-    ratio=0.3
-    initValue=2755
-    print("the tax is:",format((salery*ratio-initValue),".2f"))
-elif salery>55000 & salery<=8000:
-    ratio=0.35
-    initValue=5505
-    print("the tax is:",format((salery*ratio-initValue),".2f"))
-elif salery>80000:
-    ratio =0.45
-    initValue=13505
-    print("the tax is:",format((salery*ratio-initValue),".2f"))
-
-   
- 
+if income<=1500:
+    result(ratio=0.03,base=0)
+elif income>1500 &income<=4500:
+    result(ratio=0.1,base=105)
+elif income>4500 & income<=9000:
+    result(ratio=.2,base=555)
+elif income>9000 & income<=35000:
+    result(ratio=.25,base=1005)
+elif income>35000 & income<=55000:
+    result(ratio=.3,base=2755)
+elif income>55000 & income<=80000:
+    result(ratio=.35,base=5505)
+elif income>80000:
+    result(ratio=.45,base=13505)
 
