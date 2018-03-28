@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+class Animal(object):
+    ower='jack'
+    def __init__(self,name):
+        self_name=name
+
+    @staticmethod
+    def order_animal_food():
+        print('ording some food ...')
+        print('ok')
+
+
+Animal.order_animal_food()

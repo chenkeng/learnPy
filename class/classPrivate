@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+class Shiyanlou:
+    __private_name='shiyanlou'
+    def __get_private_name(self):
+        return self.__private_name
+
+s=Shiyanlou()
+
+t=s._Shiyanlou__private_name
+print(t)
+m=s._Shiyanlou__get_private_name()
+print(m)
+
