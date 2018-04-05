@@ -34,6 +34,7 @@
 ```
     
 4. xpath 的基本规则
+
 表达式|描述
 --|--
 nodename|选取此节点的所以子节点
@@ -41,6 +42,32 @@ nodename|选取此节点的所以子节点
 //|	从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置。
 .	|选取当前节点。
 ..	|选取当前节点的父节点。
+
+5. 
+<pre>
+response.xpath('/html/head/title').extract()  
+# ['<title>xpath</title>']
+response.xpath('//title').extract()    
+# ['<title>xpath</title>']
+response.xpath('//h2').extract() 
+# 返回所有匹配的h2标签
+response.xpath('//h2/text()').extract()
+# 只返回h2节点的文本内容
+response.xpath('//img/@src').extract() 
+# 所有图片的src值
+response.xpath('//a/@href').extract() 
+# a标签的href值
+response.xpath('//p[@class="location"]/text()').extract()  
+# 选取所有p 标签`class`属性值为`location`的文本内容
+response.xpath('//div[@class="companies"]/div[2]')
+# 获取div类名为companies下面的第二个div 的内容
+response.xpath('//div[@class="companies"]/div[2]').xpath('.//a/@href').extract()
+# 获取div类名为companies下面的第二个div下面的a标签的href值
+response.xpath('//div[contains(@class,"类名字")]/text()').extract()
+# 获取包含某个类名的div 的文本内容
+</pre>
+
+
     
     
    
