@@ -64,10 +64,5 @@ response.xpath('//div[@class="companies"]/div[2]')
 response.xpath('//div[@class="companies"]/div[2]').xpath('.//a/@href').extract()
 # 获取div类名为companies下面的第二个div下面的a标签的href值
 response.xpath('//div[contains(@class,"类名字")]/text()').extract()
-# 获取包含某个类名的div 的文本内容
+# 获取div包含某个类名的文本内容
 </pre>
-
-
-    
-    
-   
